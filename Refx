@@ -49,7 +49,7 @@ local P=game.Players.LocalPlayer
 local hit=N:RemoteEvent("RegisterHit",true)
 local atk=RS.Modules.Net["RE/RegisterAttack"]
 task.spawn(function()
-while task.wait() do
+while task.wait(0.1) do
 local c=P.Character if not c then continue end
 local r=c:FindFirstChild("HumanoidRootPart")
 local t=c:FindFirstChildOfClass("Tool")
@@ -1243,7 +1243,7 @@ if M and M ~= C then
 end;
 
 task.spawn(function()
-	while task.wait() do
+	while task.wait(0.2) do
 		if C and C.Parent == workspace then
 			if shouldTween then
 				(getgenv()).OnFarm = true;
@@ -1262,7 +1262,7 @@ task.spawn(function()
 
 	C.CFrame = I.Character.PrimaryPart.CFrame;
 
-	while task.wait() do
+	while task.wait(0.05) do
 		pcall(function()
 			if (getgenv()).OnFarm then
 				if C and C.Parent == workspace then
@@ -1387,7 +1387,7 @@ function BTP(I)
 	until (I.Position - K.Position).Magnitude <= 2000;
 end;
 task.spawn(function()
-	while task.wait() do
+	while task.wait(0.2) do
 		pcall(function()
 			if _G.SailBoat_Hydra or _G.WardenBoss or _G.AutoFactory or _G.HighestMirage or _G.HCM or _G.PGB or _G.Leviathan1 or _G.UPGDrago or _G.Complete_Trials or _G.TpDrago_Prehis or _G.BuyDrago or _G.AutoFireFlowers or _G.DT_Uzoth or _G.AutoBerry or _G.Prehis_Find or _G.Prehis_Skills or _G.Prehis_DB or _G.Prehis_DE or _G.FarmBlazeEM or _G.Dojoo or _G.CollectPresent or _G.AutoLawKak or _G.TpLab or _G.AutoPhoenixF or _G.AutoFarmChest or _G.AutoHytHallow or _G.LongsWord or _G.BlackSpikey or _G.AutoHolyTorch or _G.TrainDrago or _G.AutoSaber or _G.FarmMastery_Dev or _G.CitizenQuest or _G.AutoEctoplasm or _G.KeysRen or _G.Auto_Rainbow_Haki or _G.obsFarm or _G.AutoBigmom or _G.Doughv2 or _G.AuraBoss or _G.Raiding or _G.Auto_Cavender or _G.TpPly or _G.Bartilo_Quest or _G.Level or _G.FarmEliteHunt or _G.AutoZou or _G.AutoFarm_Bone or (getgenv()).AutoMaterial or _G.CraftVM or _G.FrozenTP or _G.TPDoor or _G.AcientOne or _G.AutoFarmNear or _G.AutoRaidCastle or _G.DarkBladev3 or _G.AutoFarmRaid or _G.Auto_Cake_Prince or _G.Addealer or _G.TPNPC or _G.TwinHook or _G.FindMirage or _G.FarmChestM or _G.Shark or _G.TerrorShark or _G.Piranha or _G.MobCrew or _G.SeaBeast1 or _G.FishBoat or _G.Auto or _G.AutoPoleV2 or _G.Auto_SuperHuman or _G.AutoDeathStep or _G.Auto_SharkMan_Karate or _G.Auto_Electric_Claw or _G.AutoDragonTalon or _G.Auto_Def_DarkCoat or _G.Auto_God_Human or _G.Auto_Tushita or _G.AutoMatSoul or _G.AutoKenVTWO or _G.AutoSerpentBow or _G.AutoFMon or _G.Auto_Soul_Guitar or _G.TPGEAR or _G.AutoSaw or _G.AutoTridentW2 or _G.Auto_StartRaid or _G.AutoEvoRace or _G.AutoGetQuestBounty or _G.MarinesCoat or _G.TravelDres or _G.Defeating or _G.DummyMan or _G.Auto_Yama or _G.Auto_SwanGG or _G.SwanCoat or _G.AutoEcBoss or _G.Auto_Mink or _G.Auto_Human or _G.Auto_Skypiea or _G.Auto_Fish or _G.CDK_TS or _G.CDK_YM or _G.CDK or _G.AutoFarmGodChalice or _G.AutoFistDarkness or _G.AutoMiror or _G.Teleport or _G.AutoKilo or _G.AutoGetUsoap or _G.Praying or _G.TryLucky or _G.AutoColShad or _G.AutoUnHaki or _G.Auto_DonAcces or _G.AutoRipIngay or _G.DragoV3 or _G.DragoV1 or _G.SailBoats or NextIs or _G.FarmGodChalice or _G.IceBossRen or senth or senth2 or _G.Lvthan or _G.beasthunter or _G.DangerLV or _G.Relic123 or _G.tweenKitsune or _G.Collect_Ember or _G.AutofindKitIs or _G.snaguine or _G.TwFruits or _G.tweenKitShrine or _G.Tp_LgS or _G.Tp_MasterA or _G.tweenShrine or _G.FarmMastery_G or _G.FarmMastery_S then
 				shouldTween = true;
@@ -3783,7 +3783,7 @@ Section7:AddButton({
         end
 
         task.spawn(function()
-            while task.wait() do
+            while task.wait(0.1) do
                 local c = p.Character
                 if not c then continue end
                 
@@ -3842,7 +3842,7 @@ local FarmHeight = 45 -- Safe height to avoid glitching into mobs
 
 -- Reinforced NoClip (to avoid getting stuck in walls/mobs)
 task.spawn(function()
-    game:GetService("RunService").Stepped:Connect(function()
+    while task.wait(0.05) do
         if _G.AutoTyrant and _G.StartFarm then
             local char = game.Players.LocalPlayer.Character
             if char then
@@ -3852,12 +3852,12 @@ task.spawn(function()
                     end
                 end
                 if char:FindFirstChild("Humanoid") then
-                    char.Humanoid.AutoRotate = true 
-                    char.Humanoid:ChangeState(11) 
+                    char.Humanoid.AutoRotate = true
+                    char.Humanoid:ChangeState(11)
                 end
             end
         end
-    end)
+    end
 end)
 
 -- Magic Function: Selects exact Mob/Quest by Level
@@ -4011,7 +4011,7 @@ end
 task.spawn(function()
     local VaseIndex = 1 -- Índice para controlar qual vaso atacar
     
-    while task.wait() do
+    while task.wait(0.1) do
 -- Only runs if toggle is enabled AND mode is Tyrant
         if _G.AutoTyrant and _G.StartFarm then
             pcall(function()
@@ -4127,7 +4127,7 @@ end)
 
 -- 3. SISTEMA BONE FARM (CORRIGIDO)
 task.spawn(function()
-    while task.wait() do
+    while task.wait(0.1) do
         if _G.AutoFarm_Bone and _G.StartFarm then
             pcall(function()
                 local plr = game.Players.LocalPlayer  
@@ -4213,7 +4213,7 @@ local function GetNearestMob(TargetName)
 end
 
 task.spawn(function()
-    while task.wait() do
+    while task.wait(0.1) do
         if _G.Level and _G.StartFarm then
             pcall(function()
                 local plr = game.Players.LocalPlayer  
@@ -4250,7 +4250,7 @@ end)
 -- 5. SISTEMA CAKE PRINCE FARM
 
 task.spawn(function()
-    while task.wait() do
+    while task.wait(0.1) do
         if _G.AutoFarm_Cake and _G.StartFarm then
             pcall(function()
                 local plr = game.Players.LocalPlayer
@@ -4336,7 +4336,7 @@ Section8:AddToggle("AutoFarmNear", {
     end
 })
 task.spawn(function()
-    while task.wait() do
+    while task.wait(0.1) do
         pcall(function()
             if not _G.AutoFarmNear then return end
 
@@ -4532,7 +4532,7 @@ Section9:AddToggle("AutoFarmChestBypass", {
 })
 
 task.spawn(function()
-    while task.wait() do
+    while task.wait(0.1) do
         if ChestBypass then
             local Players = game:GetService("Players")
             local LocalPlayer = Players.LocalPlayer
@@ -4684,7 +4684,7 @@ task.spawn(function()
 			end;
 		end;
 	end;
-	while task.wait() do
+	while task.wait(0.1) do
 		if (getgenv()).AutoMaterial then
 			pcall(function()
 				if (getgenv()).SelectMaterial then
@@ -5749,7 +5749,7 @@ Section21:AddToggle("Toggle_FarmAllBoss", {
     end
 })
 task.spawn(function()
-    while task.wait() do 
+    while task.wait(0.3) do 
         if not _G.FarmAllBoss then
             task.wait(0.5)
             continue
@@ -5804,7 +5804,7 @@ end)
 -- THREAD 2: ATACANTE + QUEST
 -- =====================
 task.spawn(function()
-    while task.wait() do
+    while task.wait(0.3) do
         pcall(function()
             if _G.AutoBoss and _G.FindBoss then
                 if QuestB then QuestB() end
@@ -6252,7 +6252,7 @@ Section24:AddToggle("Toggle_TpBarista", {
     end
 })
 task.spawn(function()
-    while task.wait() do
+    while task.wait(0.2) do
         if _G.Tp_MasterA then
             pcall(function()
                 for _, e in pairs(replicated.NPCs:GetChildren()) do
@@ -6413,7 +6413,7 @@ Section25:AddToggle("Toggle1", {
     end
 })
 task.spawn(function()
-    while task.wait() do
+    while task.wait(0.1) do
         if _G.SailBoats then
             pcall(function()
                 local I = CheckBoat();
@@ -6498,16 +6498,14 @@ Section25:AddInput("Input1", {
     end
 })
 task.spawn(function()
-    game:GetService("RunService").RenderStepped:Connect(function()
+    while task.wait(0.1) do
         if _G.SpeedBoat then
             pcall(function()
                 local plr = game.Players.LocalPlayer
--- Check if player is sitting
                 if plr.Character and plr.Character:FindFirstChild("Humanoid") and plr.Character.Humanoid.Sit then
                     for _, boat in pairs(workspace.Boats:GetChildren()) do
                         local seat = boat:FindFirstChildWhichIsA("VehicleSeat")
                         if seat then
--- Apply speed and improve direction
                             seat.MaxSpeed = _G.SetSpeedBoat
                             seat.Torque = 0.2
                             seat.TurnSpeed = 5
@@ -6516,7 +6514,7 @@ task.spawn(function()
                 end
             end)
         end
-    end)
+    end
 end)
 local Section26 = Event:AddRightGroupbox("Auto sea event")
 Section26:AddToggle("SeaBeast", {
@@ -6607,7 +6605,7 @@ end
 
 -- [[ LOOP PRINCIPAL ]]
 task.spawn(function()
-    while task.wait() do
+    while task.wait(0.1) do
         pcall(function()
             
             -- 1. INIMIGOS NORMAIS
@@ -6782,7 +6780,7 @@ Section28:AddToggle("AutoFindKitsune", {
     end
 })
 task.spawn(function()
-	while task.wait() do
+	while task.wait(0.2) do
 		if _G.AutofindKitIs then
 			pcall(function()
 				if not workspace._WorldOrigin.Locations:FindFirstChild("Kitsune Island", true) then
@@ -6927,7 +6925,7 @@ Section29:AddToggle("AutoFindMirage", {
     end
 })
 task.spawn(function()
-	while task.wait() do
+	while task.wait(0.2) do
 		if _G.FindMirage then
 			pcall(function()
 				if not workspace._WorldOrigin.Locations:FindFirstChild("Mirage Island", true) then
@@ -7224,7 +7222,7 @@ Section31:AddToggle("AutoFindPrehistoricIsland", {
     end
 })
 task.spawn(function()
-    while task.wait() do
+    while task.wait(0.1) do
         if _G.Prehis_Find then
             pcall(function()
                 -- Se a ilha NÃO foi encontrada ainda
@@ -7401,7 +7399,7 @@ end)
 -- LOGICA DE ATAQUE (SAFE MODE & OTIMIZADO)
 --------------------------------------------------------------------
 task.spawn(function()
-while task.wait() do -- Empty task.wait() here is needed for attack speed
+while task.wait(0.05) do -- Empty task.wait() here is needed for attack speed
         if _G.Prehis_Skills then
             pcall(function()
                 local plr = game.Players.LocalPlayer
@@ -7538,7 +7536,7 @@ Section31:AddToggle("AutoResetVolcano", {
     end
 })
 task.spawn(function()
-    while task.wait() do
+    while task.wait(0.1) do
         pcall(function()
             local FoundTarget = false
             
@@ -7801,7 +7799,8 @@ Section36:AddToggle("FarmMasteryFruit", {
 })
 
 task.spawn(function()
-    RunSer.RenderStepped:Connect(function()
+task.spawn(function()
+    while task.wait(0.3) do
         if _G.FarmMastery_Dev then
             pcall(function()
                 for _, e in pairs(plr.PlayerGui.Notifications:GetChildren()) do
@@ -7811,9 +7810,8 @@ task.spawn(function()
                 end
             end)
         end
-    end)
+    end
 end)
-
 task.spawn(function()
     while task.wait(Sec) do
         if _G.FarmMastery_Dev then
@@ -8207,7 +8205,7 @@ function MoveCamtoMoon()
 	plr.Character.HumanoidRootPart.CFrame = CFrame.new(plr.Character.HumanoidRootPart.Position, Lighting:GetMoonDirection() + plr.Character.HumanoidRootPart.CFrame.Position);
 end;
 task.spawn(function()
-	while task.wait() do
+	while task.wait(0.1) do
 		if LookM then
 			MoveCamtoMoon();
 			task.wait(.1);
@@ -8225,7 +8223,7 @@ Section38:AddToggle("AutoLeverToggle", {
 })
 
 task.spawn(function()
-while task.wait() do -- Use task.wait() instead of wait(Sec) to prevent errors and reduce delay
+while task.wait(0.1) do -- Use task.wait() instead of wait(Sec) to prevent errors and reduce delay
         if _G.Lver then
             pcall(function()
                 for _, e in pairs(workspace.Map["Temple of Time"]:GetDescendants()) do
@@ -8664,7 +8662,7 @@ DragonMobClear = function(I, e, K)
 		end;
 	end;
 task.spawn(function()
-	while task.wait() do
+	while task.wait(0.2) do
 		if _G.FarmBlazeEM then
 			pcall(function()
 				local I, e, K, n = checkQuesta();
@@ -9062,33 +9060,30 @@ end
 -- ==========================================
 -- HỆ THỐNG UPDATE KHOẢNG CÁCH SIÊU MƯỢT (60 FPS)
 -- ==========================================
-RunService.RenderStepped:Connect(function()
-    local char = LocalPlayer.Character
-    local head = char and char:FindFirstChild("Head")
-if not head then return end -- Pause calculations if character dies
-    local headPos = head.Position
-
--- Scan all active ESPs and update distance numbers
-    for _, esp in ipairs(CollectionService:GetTagged(REALTIME_TAG)) do
-        local target = esp.Adornee or esp.Parent
-        if target then
-            local targetPos
--- Precisely determine target position
-            if target:IsA("Attachment") then
-                targetPos = target.WorldPosition
-            elseif target:IsA("Model") then
-                targetPos = target:GetPivot().Position
-            elseif target:IsA("BasePart") then
-                targetPos = target.Position
-            end
-
-            if targetPos then
-                local dist = math.floor((headPos - targetPos).Magnitude / 3 + 0.5)
-                local baseText = esp:GetAttribute("BaseText") or ""
-                local label = esp:FindFirstChild("TextLabel")
-                
-                if label then
-                    label.Text = string.format("%s\n[ %dm ]", baseText, dist)
+task.spawn(function()
+    while task.wait(0.1) do
+        local char = LocalPlayer.Character
+        local head = char and char:FindFirstChild("Head")
+        if not head then continue end
+        local headPos = head.Position
+        for _, esp in ipairs(CollectionService:GetTagged(REALTIME_TAG)) do
+            local target = esp.Adornee or esp.Parent
+            if target then
+                local targetPos
+                if target:IsA("Attachment") then
+                    targetPos = target.WorldPosition
+                elseif target:IsA("Model") then
+                    targetPos = target:GetPivot().Position
+                elseif target:IsA("BasePart") then
+                    targetPos = target.Position
+                end
+                if targetPos then
+                    local dist = math.floor((headPos - targetPos).Magnitude / 3 + 0.5)
+                    local baseText = esp:GetAttribute("BaseText") or ""
+                    local label = esp:FindFirstChild("TextLabel")
+                    if label then
+                        label.Text = string.format("%s\n[ %dm ]", baseText, dist)
+                    end
                 end
             end
         end
